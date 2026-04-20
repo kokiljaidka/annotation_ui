@@ -4,6 +4,14 @@ A Streamlit-based annotation tool for classifying text items by misinformation d
 
 ---
 
+## Screenshots
+
+| Politics view | Finance view |
+|---|---|
+| ![Politics subcategory selection](docs/screenshot_politics.png) | ![Finance subcategory selection](docs/screenshot_finance.png) |
+
+---
+
 ## How it works
 
 1. Each annotator arrives via a URL containing their Prolific ID (e.g. `?PROLIFIC_PID=abc123`)
