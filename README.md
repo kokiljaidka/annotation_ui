@@ -32,7 +32,7 @@ text
 "A fake trading platform promised 30% monthly returns."
 ```
 
-A sample file (`data.csv`) with 10 rows is included in this repo for testing.
+A sample file (`data/data.csv`) with 10 rows is included in this repo for testing.
 
 ---
 
@@ -142,11 +142,13 @@ Annotation files are written to the same directory you run the script from (the 
 ```
 annotation_ui/
 ├── annotation_script.py
-├── data.csv                        # your input
-├── assignments.json                # auto-generated: tracks row assignments and counts — do not delete mid-study
-├── annotations_abc123.csv          # one file per annotator, named by Prolific ID
-├── annotations_xyz456.csv
-└── ...
+├── data/
+│   └── data.csv                              # your input CSV (place additional CSVs here)
+└── annotations/
+    ├── assignments.json                      # auto-generated: tracks row assignments and counts — do not delete mid-study
+    ├── annotations_abc123.csv                # one file per annotator, named by Prolific ID
+    ├── annotations_xyz456.csv
+    └── ...
 ```
 
 Each annotator produces one CSV file:

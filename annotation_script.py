@@ -5,7 +5,8 @@ import os
 
 ANNOTATIONS_PER_ROW = 3
 ROWS_PER_ANNOTATOR = 10
-ASSIGNMENTS_FILE = 'assignments.json'
+ANNOTATIONS_DIR = 'annotations'
+ASSIGNMENTS_FILE = os.path.join(ANNOTATIONS_DIR, 'assignments.json')
 
 POLITICS_SUBCATEGORIES = [
     ('policy_discussion', 'Policy Discussion', 'Discussion of political issues without attacking opponents'),
@@ -38,7 +39,8 @@ def load_df(csv_path):
 
 
 def annotator_csv_path(prolific_id):
-    return f'annotations_{prolific_id}.csv'
+    os.makedirs(ANNOTATIONS_DIR, exist_ok=True)
+    return os.path.join(ANNOTATIONS_DIR, f'annotations_{prolific_id}.csv')
 
 
 def load_annotator_df(prolific_id, orig_columns):
@@ -80,6 +82,7 @@ def load_assignments():
 
 
 def save_assignments(data):
+    os.makedirs(ANNOTATIONS_DIR, exist_ok=True)
     with open(ASSIGNMENTS_FILE, 'w') as f:
         json.dump(data, f, indent=2)
 
@@ -122,7 +125,7 @@ def main():
 
     st.sidebar.markdown(f"**Prolific ID:** `{prolific_id}`")
 
-    csv_path = st.sidebar.text_input("CSV file path", value="data.csv")
+    csv_path = st.sidebar.text_input("CSV file path", value="data/data.csv")
     if not os.path.exists(csv_path):
         st.warning(f"CSV not found at `{csv_path}`.")
         return
