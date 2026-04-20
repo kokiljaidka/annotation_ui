@@ -137,6 +137,18 @@ Use [nginx](https://nginx.org) as a reverse proxy and [Let's Encrypt](https://le
 
 ## Output
 
+Annotation files are written to the same directory you run the script from (the `annotation_ui/` folder):
+
+```
+annotation_ui/
+├── annotation_script.py
+├── data.csv                        # your input
+├── assignments.json                # auto-generated: tracks row assignments and counts — do not delete mid-study
+├── annotations_abc123.csv          # one file per annotator, named by Prolific ID
+├── annotations_xyz456.csv
+└── ...
+```
+
 Each annotator produces one CSV file:
 
 | Column | Description |
