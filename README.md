@@ -25,11 +25,15 @@ chmod +x run_app.sh
 ## Usage
 Open your browser at:
 http://localhost:8501/
-	•	The interface will:
+The interface will:
+
 	•	Display text message by message
+	
 	•	Allow annotation word by word
 After completing annotations use the Save button to export results as a CSV file
 
-Notes
+Notes:
+
 	•	The platform is designed for local use
+	
 	•	Input data must be in CSV format
